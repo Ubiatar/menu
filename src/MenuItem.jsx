@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import KeyCode from 'rc-util/lib/KeyCode';
 import classnames from 'classnames';
 import { noop } from './util';
+import css from '../assets/index.css';
 
 /* eslint react/no-is-mounted:0 */
 
@@ -152,10 +153,10 @@ const MenuItem = React.createClass({
     const props = this.props;
     const selected = this.isSelected();
     const classes = {};
-    classes[this.getActiveClassName()] = !props.disabled && props.active;
-    classes[this.getSelectedClassName()] = selected;
-    classes[this.getDisabledClassName()] = props.disabled;
-    classes[this.getPrefixCls()] = true;
+    classes[css[this.getActiveClassName()]] = !props.disabled && props.active;
+    classes[css[this.getSelectedClassName()]] = selected;
+    classes[css[this.getDisabledClassName()]] = props.disabled;
+    classes[css[this.getPrefixCls()]] = true;
     classes[props.className] = !!props.className;
     const attrs = {
       ...props.attribute,

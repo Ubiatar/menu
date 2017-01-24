@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 import KeyCode from 'rc-util/lib/KeyCode';
 import classnames from 'classnames';
 import { noop, loopMenuItemRecusively } from './util';
+import css from '../assets/index.css';
 
 let guid = 0;
 
@@ -390,8 +391,8 @@ const SubMenu = React.createClass({
       }
     }
 
-    classes[prefixCls] = true;
-    classes[`${prefixCls}-${props.mode}`] = 1;
+    classes[css[prefixCls]] = true;
+    classes[css[`${prefixCls}-${props.mode}`]] = 1;
     let titleClickEvents = {};
     let mouseEvents = {};
     let titleMouseEvents = {};
