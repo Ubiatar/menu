@@ -261,7 +261,7 @@ const MenuMixin = {
       <DOMWrap
         style={props.style}
         tag="ul"
-        hiddenClassName={`${css[`${props.prefixCls}-hidden`]}`}
+        hiddenClassName={css[`${props.prefixCls}-hidden`]}
         visible={props.visible}
         {...domProps}
       >
