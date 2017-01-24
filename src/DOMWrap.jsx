@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from '../assets/index.css';
 
 const DOMWrap = React.createClass({
   propTypes: {
@@ -17,7 +18,7 @@ const DOMWrap = React.createClass({
     const props = { ...this.props };
     if (!props.visible) {
       props.className = props.className || '';
-      props.className += ` ${props.hiddenClassName}`;
+      props.className += ` ${css[`${props.hiddenClassName}`]}`;
     }
     const Tag = props.tag;
     delete props.tag;
