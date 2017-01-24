@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import scrollIntoView from 'dom-scroll-into-view';
 import { getKeyFromChildrenIndex, loopMenuItem } from './util';
 import DOMWrap from './DOMWrap';
+import css from '../assets/index.css';
 
 function allDisabled(arr) {
   if (!arr.length) {
@@ -238,8 +239,8 @@ const MenuMixin = {
   renderRoot(props) {
     this.instanceArray = [];
     const classes = {
-      [props.prefixCls]: 1,
-      [`${props.prefixCls}-${props.mode}`]: 1,
+      [css[props.prefixCls]]: 1,
+      [css[`${props.prefixCls}-${props.mode}`]]: 1,
       [props.className]: !!props.className,
     };
     const domProps = {
