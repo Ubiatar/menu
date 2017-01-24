@@ -418,7 +418,7 @@ const SubMenu = React.createClass({
       <li className={classnames(classes)} {...mouseEvents}>
         <div
           style={style}
-          className={`${prefixCls}-title`}
+          className={css[`${prefixCls}-title`]}
           {...titleMouseEvents}
           {...titleClickEvents}
           aria-expanded={isOpen}

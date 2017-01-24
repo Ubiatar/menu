@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from '../assets/index.css';
 
 const MenuItemGroup = React.createClass({
   propTypes: {
@@ -22,9 +23,9 @@ const MenuItemGroup = React.createClass({
   render() {
     const props = this.props;
     const { className = '', rootPrefixCls } = props;
-    const titleClassName = `${rootPrefixCls}-item-group-title`;
-    const listClassName = `${rootPrefixCls}-item-group-list`;
-    return (<li className={`${className} ${rootPrefixCls}-item-group`}>
+    const titleClassName = css[`${rootPrefixCls}-item-group-title`];
+    const listClassName = css[`${rootPrefixCls}-item-group-list`];
+    return (<li className={`${className} ${css[`${rootPrefixCls}-item-group`]}`}>
       <div className={titleClassName}>{props.title}</div>
       <ul className={listClassName}>
         {React.Children.map(props.children, this.renderInnerMenuItem)}

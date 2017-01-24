@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from '../assets/index.css';
 
 const Divider = React.createClass({
   propTypes: {
@@ -15,7 +16,7 @@ const Divider = React.createClass({
 
   render() {
     const { className = '', rootPrefixCls } = this.props;
-    return <li className={`${className} ${rootPrefixCls}-item-divider`}/>;
+    return <li className={`${className} ${css[`${rootPrefixCls}-item-divider`]}`}/>;
   },
 });
 

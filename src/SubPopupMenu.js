@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import MenuMixin from './MenuMixin';
 import Animate from 'rc-animate';
+import css from '../assets/index.css';
 
 const SubPopupMenu = React.createClass({
   propTypes: {
@@ -76,7 +77,7 @@ const SubPopupMenu = React.createClass({
       transitionAppear = false;
     }
     const props = { ...this.props };
-    props.className += ` ${props.prefixCls}-sub`;
+    props.className += ` ${css[`${props.prefixCls}-sub`]}`;
     const animProps = {};
     if (props.openTransitionName) {
       animProps.transitionName = props.openTransitionName;
