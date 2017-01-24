@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import MenuMixin from './MenuMixin';
 import { noop } from './util';
+import css from '../assets/index.css';
 
 const Menu = React.createClass({
   propTypes: {
@@ -228,7 +229,7 @@ const Menu = React.createClass({
 
   render() {
     const props = { ...this.props };
-    props.className += ` ${props.prefixCls}-root`;
+    props.className += ` ${css[`${props.prefixCls}-root`]}`;
     return this.renderRoot(props);
   },
 });
