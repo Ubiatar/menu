@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import KeyCode from 'rc-util/lib/KeyCode';
 import classnames from 'classnames';
 import { noop, loopMenuItemRecusively } from './util';
-import css from '../assets/index.css';
 
 let guid = 0;
 
@@ -33,6 +32,7 @@ const SubMenu = React.createClass({
     onTitleMouseEnter: PropTypes.func,
     onTitleMouseLeave: PropTypes.func,
     onTitleClick: PropTypes.func,
+    css: PropTypes.object,
   },
 
   mixins: [require('./SubMenuStateMixin')],
@@ -45,6 +45,7 @@ const SubMenu = React.createClass({
       onTitleMouseLeave: noop,
       onTitleClick: noop,
       title: '',
+      css: require('../assets/index.css'),
     };
   },
 
@@ -391,8 +392,8 @@ const SubMenu = React.createClass({
       }
     }
 
-    classes[css[prefixCls]] = true;
-    classes[css[`${prefixCls}-${props.mode}`]] = 1;
+    classes[props.css[prefixCls]] = true;
+    classes[props.css[`${prefixCls}-${props.mode}`]] = 1;
     let titleClickEvents = {};
     let mouseEvents = {};
     let titleMouseEvents = {};
@@ -418,7 +419,7 @@ const SubMenu = React.createClass({
       <li className={classnames(classes)} {...mouseEvents}>
         <div
           style={style}
-          className={css[`${prefixCls}-title`]}
+          className={props.css[`${prefixCls}-title`]}
           {...titleMouseEvents}
           {...titleClickEvents}
           aria-expanded={isOpen}

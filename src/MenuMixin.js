@@ -6,7 +6,6 @@ import classnames from 'classnames';
 import scrollIntoView from 'dom-scroll-into-view';
 import { getKeyFromChildrenIndex, loopMenuItem } from './util';
 import DOMWrap from './DOMWrap';
-import css from '../assets/index.css';
 
 function allDisabled(arr) {
   if (!arr.length) {
@@ -65,6 +64,7 @@ const MenuMixin = {
     defaultOpenKeys: PropTypes.arrayOf(PropTypes.string),
     openKeys: PropTypes.arrayOf(PropTypes.string),
     children: PropTypes.any,
+    css: PropTypes.object,
   },
 
   getDefaultProps() {
@@ -77,6 +77,7 @@ const MenuMixin = {
       visible: true,
       focusable: true,
       style: {},
+      css: require('../assets/index.css'),
     };
   },
 
@@ -239,8 +240,8 @@ const MenuMixin = {
   renderRoot(props) {
     this.instanceArray = [];
     const classes = {
-      [css[props.prefixCls]]: 1,
-      [css[`${props.prefixCls}-${props.mode}`]]: 1,
+      [props.css[props.prefixCls]]: 1,
+      [props.css[`${props.prefixCls}-${props.mode}`]]: 1,
       [props.className]: !!props.className,
     };
     const domProps = {
@@ -261,7 +262,7 @@ const MenuMixin = {
       <DOMWrap
         style={props.style}
         tag="ul"
-        hiddenClassName={css[`${props.prefixCls}-hidden`]}
+        hiddenClassName={props.css[`${props.prefixCls}-hidden`]}
         visible={props.visible}
         {...domProps}
       >
