@@ -40,7 +40,8 @@
     "saucelabs": "rc-tools run saucelabs",
     "test": "jest",
     "chrome-test": "rc-tools run chrome-test",
-    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "lib": "babel src --out-dir lib -w"
   },
   "jest": {
     "collectCoverageFrom": [

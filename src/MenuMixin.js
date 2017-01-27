@@ -64,7 +64,6 @@ const MenuMixin = {
     defaultOpenKeys: PropTypes.arrayOf(PropTypes.string),
     openKeys: PropTypes.arrayOf(PropTypes.string),
     children: PropTypes.any,
-    css: PropTypes.object,
   },
 
   getDefaultProps() {
@@ -77,7 +76,6 @@ const MenuMixin = {
       visible: true,
       focusable: true,
       style: {},
-      css: require('../assets/index.css'),
     };
   },
 
@@ -222,6 +220,7 @@ const MenuMixin = {
       onItemHover: this.onItemHover,
       active: !childProps.disabled && isActive,
       multiple: props.multiple,
+      css: props.css,
       onClick: this.onClick,
       openTransitionName: this.getOpenTransitionName(),
       openAnimation: props.openAnimation,

@@ -22,7 +22,7 @@ const MenuItem = React.createClass({
     onDestroy: PropTypes.func,
     onMouseEnter: PropTypes.func,
     onMouseLeave: PropTypes.func,
-    css: PropTypes.object,
+    css: PropTypes.object.isRequired,
   },
 
   getDefaultProps() {
@@ -30,7 +30,6 @@ const MenuItem = React.createClass({
       onSelect: noop,
       onMouseEnter: noop,
       onMouseLeave: noop,
-      css: require('../assets/index.css'),
     };
   },
 
